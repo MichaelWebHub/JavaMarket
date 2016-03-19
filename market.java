@@ -9,16 +9,17 @@ import java.io.IOException;
 
 public class market {
 	
+	//static int a, b;
 	static String[][] str = new String[3][4]; 
     static Scanner scan;
     
     
     	public static void main(String[] args) throws IOException {
 
-		System.out.println("1. Продажа товара");
-		System.out.println("2. Поставка товара");
-		System.out.println("3. Данные по продажама");
-		System.out.print("Выберите опцию: ");
+		System.out.println("1. Want to Sell");
+		System.out.println("2. Want to Buy");
+		System.out.println("3. Realization data");
+		System.out.print("Choose the option: ");
 		
 		// Ввод с клавиатуры опции
 		Scanner keyboard = new Scanner(System.in);
@@ -31,26 +32,26 @@ public class market {
 			outFile();
 			
 			System.out.println();
-			System.out.print("Что желаете (id)? ");
+			System.out.print("What do you need (id)? ");
 			int id = keyboard.nextInt();  // ввод с клавиатуры id товара
 			
-			System.out.print("Сколько?  ");
+			System.out.print("How many?  ");
 			int count = keyboard.nextInt();  // ввод с клавиатуры количества товара
 			
 			int amount = Integer.parseInt(str[id-1][3]); // читаем из файла количество продукта
 			if(count > amount) {
-				System.out.println("Данного товара нет в таком количестве!");
+				System.out.println("There is no such amount of this thing!");
 			} else {
 			
-			System.out.println("Вы выбрали: ");
-			System.out.print("id - " + str[id-1][0] + "("+ str[id-1][1] +") в количестве "+count + " штук(и)");
+			System.out.println("You choosed: ");
+			System.out.print("id - " + str[id-1][0] + "("+ str[id-1][1] +") in amount of "+count);
 			System.out.println();
-			System.out.print("Заказать? y/n  ");
+			System.out.print("Book? y/n  ");
 			
 			String answer = keyboard.next();
 			switch(answer) {
 			case "y":
-				System.out.println("Заказ принят");
+				System.out.println("Booking accepted");
 				
 				PrintStream listout = new PrintStream("res//products.txt");
 				for (int row = 0; row < str.length; row++){
@@ -74,9 +75,9 @@ public class market {
 			}
 		  }
 		} else if (option == 2) {
-			System.out.print("чикчик");
+			System.out.print("asdf");
 		} else if (option == 3) {
-			System.out.print("список продаж");
+			System.out.print("asdf");
 		}
 	}
 	
